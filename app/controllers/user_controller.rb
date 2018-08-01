@@ -16,4 +16,9 @@ class UserController < ApplicationController
       redirect_to("/users/#{@users.username}")
     end
   end
+
+  def show
+    @users = User.find_by(username:params[:id])
+  end
+  
 end
